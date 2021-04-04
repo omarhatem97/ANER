@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 style="color: brown"> Arabic Named Entity Recognition</h1>
+         <form action="/test" method="POST">
+            <div class="form-floating">
+                  <textarea class="form-control"  id="input" name="input" style="height: 200px">{{inp}}</textarea>
+                  <label for="input">ادخل النص</label>
+            </div>
+             <div class="centre">
+                 <input type="submit" value="Submit" class="btn btn-success but">
+             </div>
+
+
+            <div class="form-floating">
+                  <textarea class="form-control"  id="output" name="input" style="height: 200px">{{task}}</textarea>
+                  <label for="input">النتيجة</label>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
