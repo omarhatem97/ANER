@@ -61,6 +61,8 @@ def driver(input, itc):
 #
 #     trans.append(translitrated_sent)
 
+
+
 def franco_ner(s):
     NER = NERecognizer.pretrained()
     # translitrated_sent = driver(s, arabic)
@@ -74,6 +76,22 @@ def franco_trans(s):
     sentence = driver(s, arabic)
     return sentence
     
+
+
+
+if __name__ == '__main__':
+    s = """
+علشان الهبد في الكورة مش جديد
+اعرف اخبار الدوري من العميد
+اطلبأو نزل MyOrange واشترك في خدمة الدوري من اورنچ
+و اعرف كل كبيرة و صغيرة من العميد احمد حسن
+"""
+
+    print(franco_ner(s))
+    # print(fun('o'))
+
+
+
 
 # with open("out.txt", "a") as f:
 #     for line in trans:
