@@ -26,7 +26,6 @@ def test():
     if request.method == "POST":
         inp = request.form['input']
         sentence = helper.prepare_sentence(inp)
-        print(sentence)
         task = test_camel(sentence)
         # task = helper.final_result(task)
         return render_template('test.html', task=task, inp=inp)

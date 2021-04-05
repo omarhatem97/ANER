@@ -1,9 +1,9 @@
 from franco import franco_trans
 import re
-import emoji
 
 
-def final_result (l):
+
+def final_result(l):
     s = ''
     print('l is :')
     print (l)
@@ -14,7 +14,7 @@ def final_result (l):
 
 def is_english(s):
     for l in s:
-        if((65 <= ord(l) <= 90) or (97 <= ord(l) <= 122)):
+        if (65 <= ord(l) <= 90) or (97 <= ord(l) <= 122):
             return True
     return False
 
@@ -47,6 +47,7 @@ def remove_n(s):
     res = " ".join(l)
     return res
 
+
 def remove_emoji(string):
     emoji_pattern = re.compile("["
                            u"\U0001F600-\U0001F64F"  # emoticons
@@ -60,46 +61,22 @@ def remove_emoji(string):
 
 
 def prepare_sentence(s):
-
     temp = remove_n(s)
     temp = remove_r(temp)
     temp = remove_emoji(temp)
     l = temp.split(' ')
-
-    print('list:')
-    print(l)
     for i in range(0, len(l)):
         w = l[i]
         if(not is_ar(w)):
-            print('word is: {}'.format(w))
             l[i] = franco_trans(w)
     res = " ".join(l)
     return res
 
 
-if __name__ == '__main__':
-    s = "alo alo el shi mnwawa ❤ gamed 🎉"
-    text = remove_emoji(s)
-    print('alo alo')
-    print(text)
-    print('done')
 
 
-# def is_emoji(s):
-#     count = 0
-#     for emoji in UNICODE_EMOJI:
-#         count += s.count(emoji)
-#         if count > 1:
-#             return False
-#     return bool(count)
 
 
-# def extract_emojis(s):
-#     for c in s:
-#         if( in emoji.UNICODE_EMOJI):
-#             return True
-#     return False
-#   # return ''.join(c for c in s if c in emoji.UNICODE_EMOJI)
 
 
 
