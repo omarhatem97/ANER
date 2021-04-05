@@ -77,14 +77,6 @@ def prepare_sentence(s):
     return res
 
 
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     s = "alo alo el shi mnwawa ❤ gamed 🎉"
     text = remove_emoji(s)
